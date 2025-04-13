@@ -21,6 +21,5 @@
     <change-notes>
         <![CDATA[<ul><li>Initial release</li><li>Initial scaffold created from <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a></li></ul>]]></change-notes>
     <description><![CDATA[<p>Simple plugin to generate annotation Jira Links for configured pattern in any type of file.</p>
-
 <p>More details and description available <a href="https://github.com/ewakuch/jira-link">HERE</a></p>]]></description>
 </idea-plugin>
