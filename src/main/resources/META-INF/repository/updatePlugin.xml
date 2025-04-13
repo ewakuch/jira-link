@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+The <plugins> element (required) contains the description of the plugins
+available at this repository.
+-->
+<plugins>
+    <!--
+    Each <plugin> element (required) describes one plugin in the repository.
+    Attributes:
+     - "id" (required) - used by JetBrains IDEs to uniquely identify
+       a plugin. Must match <id> in the plugin.xml file.
+     - "url" (required) - URL to download the plugin JAR/ZIP file.
+       Must be HTTPS.
+     - "version" (required) - version of this plugin. Must match <version>
+       in the plugin.xml file.
+    -->
+    <plugin
+            id="com.github.jira-link"
+            url="https://{your-bucket-name}.s3.{aws-region}.amazonaws.com/plugin/jira-link.zip"
+            version="1.0.0" description="Jira Link">
+        <!--
+        The <idea-version> element (required) must match the same element
+        in the plugin.xml file.
+        -->
+        <idea-version since-build="243"/>
+        <name>Fake Cucumber</name>
+        <change-notes>
+            <![CDATA[<ul><li>Initial release</li><li>Initial scaffold created from <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a></li></ul>]]></change-notes>
+        <description><![CDATA[<p>Simple plugin to generate annotation Jira Links for configured pattern in any type of file.</p>
+
+<p>More details and description available <a href="https://github.com/ewa-kucharek/jira-link/src/master/README.md">HERE</a></p>]]></description>
+    </plugin>
+    <!-- And so on for other plugins... -->
+</plugins>
