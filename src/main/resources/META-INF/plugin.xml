@@ -1,0 +1,26 @@
+<idea-plugin>
+    <version>1.0.0</version>
+    <id>com.github.jira-link</id>
+    <name>Jira-Link</name>
+    <vendor>ewa-kucharek</vendor>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <idea-version since-build="243"/>
+    <resource-bundle>messages.MyBundle</resource-bundle>
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable instance="jiralink.configurables.PluginDirectoryConfigurable" displayName="Jira Link"/>
+        <annotator implementationClass="jiralink.annotations.JiraAnnotator" language=""/>
+    </extensions>
+
+    <applicationListeners>
+        <listener class="jiralink.listeners.MyDynamicPluginListener"
+                  topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+        <listener class="jiralink.listeners.MyApplicationActivationListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    </applicationListeners>
+    <change-notes>
+        <![CDATA[<ul><li>Initial release</li><li>Initial scaffold created from <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a></li></ul>]]></change-notes>
+    <description><![CDATA[<p>Simple plugin to generate annotation Jira Links for configured pattern in any type of file.</p>
+
+<p>More details and description available <a href="https://github.com/ewa-kucharek/jira-link/src/master/README.md">HERE</a></p>]]></description>
+</idea-plugin>
