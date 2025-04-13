@@ -23,12 +23,11 @@ available at this repository.
         in the plugin.xml file.
         -->
         <idea-version since-build="243"/>
-        <name>Fake Cucumber</name>
+        <name>Jira Link</name>
         <change-notes>
             <![CDATA[<ul><li>Initial release</li><li>Initial scaffold created from <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a></li></ul>]]></change-notes>
         <description><![CDATA[<p>Simple plugin to generate annotation Jira Links for configured pattern in any type of file.</p>
-
-<p>More details and description available <a href="https://github.com/ewa-kucharek/jira-link/src/master/README.md">HERE</a></p>]]></description>
+<p>More details and description available <a href="https://github.com/ewakuch/jira-link/src/master/README.md">HERE</a></p>]]></description>
     </plugin>
     <!-- And so on for other plugins... -->
 </plugins>
