@@ -1,0 +1,63 @@
+pipeline {
+  agent {
+    kubernetes {
+      inheritFrom 'eks-large'
+      defaultContainer 'runner'
+      yaml """
+            spec:
+              containers:
+              - name: runner
+                image: {docker image with corresponding gradle version, Java 21 and awscli}
+            """
+    }
+  }
+  parameters {
+    gitParameter(branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH')
+  }
+  stages {
+    stage('Build plugin') {
+      steps {
+        echo "Compiling project"
+        sh "./gradlew clean"
+        sh "./gradlew buildPlugin"
+      }
+    }
+
+    stage('Upload to S3') {
+      steps {
+        s3Upload(
+            bucket: '{bucket-name}',
+            includePathPattern: '**/*.zip',
+            path: 'plugin/',
+            acl:'PublicRead',
+            workingDir: 'build/distributions'
+        )
+        s3Upload(
+            bucket: '{bucket-name}',
+            includePathPattern: '**/*.xml',
+            path: 'plugin/',
+            acl:'PublicRead',
+            workingDir: 'src/main/resources/META-INF/repository'
+        )a
+      }
+    }
+  }
+  post {
+    always {
+
+      script {
+        currentBuild.description = "DESTINATION: ${params.destination} BRANCH: ${env.GIT_BRANCH}, COMMIT: ${GIT_COMMIT[0..6]}"
+      }
+    }
+    success {
+      script {
+        data = readFile("build/changelog.txt")
+        slackSend(
+            channel: "{#your-slack-channel}",
+            color: "good",
+            message: "${data}"
+        )
+      }
+    }
+  }
+}

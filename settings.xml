@@ -1,0 +1,19 @@
+<settings>
+    <servers>
+        <server>
+            <id>ziflowNexusSnapshots</id>
+            <username>ekucharek</username>
+            <password>9sD4Ul2f7vaKwF22dH5B</password>
+        </server>
+        <server>
+            <id>ziflow-public</id>
+            <username>ekucharek</username>
+            <password>9sD4Ul2f7vaKwF22dH5B</password>
+        </server>
+        <server>
+            <id>githubZiflow</id>
+            <username>ewa-kucharek</username>
+            <password>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</password>
+        </server>
+    </servers>
+</settings>
