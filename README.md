@@ -3,7 +3,7 @@
 <!-- Plugin description -->
 Simple plugin to generate annotation Jira Links for configured pattern in any type of file.
 
-More details and description available [HERE](https://github.com/ewakuch/jira-link/src/master/README.md)
+More details and description available [HERE](https://github.com/ewakuch/jira-link)
 <!-- Plugin description end -->
 
 ## Installation

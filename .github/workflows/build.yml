@@ -204,6 +204,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      # Ensure Gradle Wrapper is executable
+      - name: Set Gradlew Permissions
+        run: chmod +x ./gradlew
+
       # Cache Plugin Verifier IDEs
       - name: Setup Plugin Verifier IDEs Cache
         uses: actions/cache@v4
